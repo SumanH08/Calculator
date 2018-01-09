@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 parent">
+
+      <div class="calc">
+
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th id="display-screen"colspan="4"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+
+              <td onClick="compute('AC')" name="AC" class="controls" value="AC"  scope="row" id="AC">AC<a href="#"></a></td>
+              <td onClick="compute('CE');" class="controls" id="CE">CE<a href="#"></a></td>
+              <td onClick="compute('%');" class="controls" id="div">%<a href="#"></a></td>
+              <td onClick="compute('*');" class="controls" id="multiply">*<a href="#"></a></td>
+            </tr>
+            <tr>
+              <td onClick="compute('7');" scope="row"id="num7">7<a href="#"></a></td>
+              <td onClick="compute('8');" id="num8">8<a href="#"></a></td>
+              <td onClick="compute('9');" id="num9">9<a href="#"></a></td>
+              <td onClick="compute('-');" id="minus" class="controls">-<a href="#"></a></td>
+            </tr>
+            <tr>
+              <td onClick="compute('4');" id="num4"scope="row">4<a href="#"></a></td>
+              <td onClick="compute('5');" id="num5">5<a href="#"></a></td>
+              <td onClick="compute('6');" id="num6">6<a href="#"></a></td>
+              <td onClick="compute('+');" id="plus"class="controls">+<a href="#"></a></td>
+            </tr>
+            <tr>
+              <td onClick="compute('1');" id="num1" scope="row">1<a href="#"></a></td>
+              <td onClick="compute('2');" id="num2">2<a href="#"></a></td>
+              <td onClick="compute('3');" id="num3">3<a href="#"></a></td>
+              <td onClick="compute('=');" id="equals" class="controls" rowspan="2">=<a href="#"></a></td>
+            </tr>
+            <tr>
+              <td onClick="compute('0');" id="num0" scope="row" colspan="2">0<a href="#"></a></td>
+              <td onClick="compute('.');" id="dot" class="controls">.<a href="#"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+</body>
+
+</html>

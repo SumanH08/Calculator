@@ -1,0 +1,27 @@
+.parent{
+  display: table;
+  position: relative;
+}
+
+.calc{
+  background-color: grey;
+  display: table-cell;
+  vertical-align: middle;
+}
+.table th{
+  min-height: 100px;
+  max-height: 400px;
+}
+.controls{
+  background-color: #1DE9B6;
+}
+
+table th{
+  background-color: #ECEFF1;
+}
+
+td:hover{
+  box-shadow: 5px 5px 3px rgba(1, 1, 1, 0.3);
+  opacity: 0.5;
+  cursor: pointer;
+}
