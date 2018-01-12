@@ -1,39 +1,43 @@
-var arr = [],
-  result = 0;
-
-function compute(val) {
-
-  if (val == "AC" || val == "CE") {
+var arr = [], result = "", interim = 0;
+function compute(val){
+  // All clear
+  if(val == "AC"){
     $('#display-screen').text("");
-  } else {
-    $('#display-screen').text(val);
+    arr.length = 0;
+    result = "";
+    interim = 0;
+  }
+  // clear one element at a time
+  else if(val == "CE") {
+    var newArr = arr.splice(-1, 1);
+    var newStr = arr.join("");
+    $('#display-screen').text(newStr);
+    result = "";
+    // interim = newArr.slice();
+
+  }
+  //display the final elements to be calculated on screen
+  else {
+    interim = arr.join("");
+    interim += val;
+    console.log(interim);
+    $('#display-screen').text(interim);
     arr.push(val);
   }
-  if (val == "=") {
-    //moving elements of the array to a string "result"
-    for (var i = 0; i < arr.length - 1; i++) {
-      console.log(arr[i]);
-      result += arr[i]
+
+  //calculation
+  if(val == "="){
+    console.log("This is the array" + arr);
+    for(var i=0; i<arr.length-1; i++){
+      result += arr[i];
+      console.log("This is the result:" + result);
     }
-    //call different functions depending on floating point or integer
-    if (result.indexOf("/") >= 0 || result.indexOf(".") >= 0) {
-      calculateDecimal(result);
-    } else {
-      calculateInteger(result);
-    }
+
+    console.log(eval(result).toFixed(2));
+    $('#display-screen').text(result + " = " + eval(result).toFixed(2));
+    arr.length = 0;
+    result = "";
+    interim = 0;
   }
-}
 
-function calculateDecimal(result) {
-  console.log("This is for decimal");
-}
-
-function calculateInteger(result) {
-
-  var finalResult = eval(result);
-  console.log("This is the result:" + eval(result));
-
-  $('#display-screen').text(result + " = " + finalResult);
-  arr.length = 0;
-  result = 0;
 }
