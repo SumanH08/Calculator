@@ -31,7 +31,8 @@ function compute(val){
     else
 
     {
-      // console.log("Array inside just before result:" + arr);
+      console.log("This is current val:" +val);
+      console.log("This is last before if:" + last);
       if(ops.indexOf(last) >= 0){
         console.log("OH now");
       }
@@ -45,7 +46,7 @@ function compute(val){
         last = arr.slice(-1);
         console.log("This is my ops:" + ops);
         console.log("This is my last: " + last);
-        console.log(ops.indexOf(last));
+        console.log("This is the index of last in ops:" + ops.indexOf(last));
       }
 
     }
