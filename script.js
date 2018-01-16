@@ -1,4 +1,4 @@
-var arr = [], result = "", interim = 0, resultOnce = false, finalResult = 0, tempArr = [];
+var arr = [], result = "", interim = 0, resultOnce = false, finalResult = 0, tempArr = [], ops = ["+", "-", "/", "*"], last = "";
 function compute(val){
   // All clear
   if(val == "AC"){
@@ -31,15 +31,29 @@ function compute(val){
     else
 
     {
-      interim = arr.join("");
-      interim += val;
-      $('#display-screen').text(interim);
-      arr.push(val);
+      // console.log("Array inside just before result:" + arr);
+      if(ops.indexOf(last) >= 0){
+        console.log("OH now");
+      }
+      else{
+        interim = arr.join("");
+        interim += val;
+        $('#display-screen').text(interim);
+        arr.push(val);
+        resultOnce = false;
+        console.log("This is the arr in else =:" + arr);
+        last = arr.slice(-1);
+        console.log("This is my ops:" + ops);
+        console.log("This is my last: " + last);
+        console.log(ops.indexOf(last));
+      }
+
     }
 
   }
 
   //calculation
+
   if(val == "="){
     console.log("This is the array inside result part" + arr);
     for(var i=0; i<arr.length-1; i++){
