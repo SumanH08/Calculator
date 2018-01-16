@@ -6,6 +6,7 @@ function compute(val){
     arr.length = 0;
     result = "";
     interim = 0;
+    resultOnce = false;
   }
   // clear one element at a time
   else if(val == "CE") {
@@ -13,26 +14,23 @@ function compute(val){
     var newStr = arr.join("");
     $('#display-screen').text(newStr);
     result = "";
+    resultOnce = false;
     // interim = newArr.slice();
 
   }
   //display the final elements to be calculated on screen
   else {
     if(resultOnce & (val == "/" || val == "*"|| val == "+"|| val == "-")){
-      // interim += finalResult;
-      // console.log("interim value 1" + interim);
-      //
-      // interim += val;
-      // console.log("interim value 2" + interim);
+      var tempInterim = 0
+      arr.push(finalResult);
       arr.push(val);
-      tempArr.push(finalResult);
-      interim = tempArr.join("");
-      interim += val;
-      $('#display-screen').text(interim);
-      tempArr.push(val);
+      tempInterim = arr.join("");
+      $('#display-screen').text(tempInterim);
       resultOnce = false;
     }
-    else {
+    else
+
+    {
       interim = arr.join("");
       interim += val;
       $('#display-screen').text(interim);
