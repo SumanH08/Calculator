@@ -18,6 +18,10 @@ function compute(val){
     // interim = newArr.slice();
 
   }
+
+  else if(ops.indexOf(arr[arr.length-1]) >= 0 && (val == "/" || val == "*"|| val == "+"|| val == "-")) {
+    console.log("OH now");
+  }
   //display the final elements to be calculated on screen
   else {
     if(resultOnce & (val == "/" || val == "*"|| val == "+"|| val == "-")){
@@ -31,23 +35,16 @@ function compute(val){
     else
 
     {
-      console.log("This is current val:" +val);
-      console.log("This is last before if:" + last);
-      if(ops.indexOf(last) >= 0){
-        console.log("OH now");
-      }
-      else{
-        interim = arr.join("");
-        interim += val;
-        $('#display-screen').text(interim);
-        arr.push(val);
-        resultOnce = false;
-        console.log("This is the arr in else =:" + arr);
-        last = arr.slice(-1);
-        console.log("This is my ops:" + ops);
-        console.log("This is my last: " + last);
-        console.log("This is the index of last in ops:" + ops.indexOf(last));
-      }
+      interim = arr.join("");
+      interim += val;
+      $('#display-screen').text(interim);
+      arr.push(val);
+      resultOnce = false;
+      console.log("This is the arr in else =:" + arr);
+      last = arr.slice(-1);
+      console.log("This is my ops:" + ops);
+      console.log("This is my last: " + last);
+      console.log("This is the index of last in ops:" + ops.indexOf(last));
 
     }
 
